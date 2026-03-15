@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheckMatch — Kiểm Tra Địa Chỉ Ví Crypto An Toàn</title>
+  <meta name="description" content="Kiểm tra địa chỉ ví crypto khi copy-paste. Phát hiện lừa đảo clipboard hijacking, address poisoning. Hỗ trợ ETH, BTC, SOL, TRON, BNB. Hoàn toàn miễn phí, không lưu dữ liệu." />
+  <link rel="canonical" href="https://libraco.github.io/checkmatch/" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://libraco.github.io/checkmatch/" />
+  <meta property="og:title" content="CheckMatch — Kiểm Tra Địa Chỉ Ví Crypto An Toàn" />
+  <meta property="og:description" content="Kiểm tra địa chỉ ví crypto khi copy-paste. Phát hiện lừa đảo clipboard hijacking và address poisoning. Hỗ trợ ETH, BTC, SOL, TRON, BNB." />
+  <meta property="og:image" content="https://libraco.github.io/checkmatch/favicon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://libraco.github.io/checkmatch/" />
+  <meta property="twitter:title" content="CheckMatch — Kiểm Tra Địa Chỉ Ví Crypto An Toàn" />
+  <meta property="twitter:description" content="Kiểm tra địa chỉ ví crypto khi copy-paste. Phát hiện lừa đảo clipboard hijacking và address poisoning. Hỗ trợ ETH, BTC, SOL, TRON, BNB." />
+  <meta property="twitter:image" content="https://libraco.github.io/checkmatch/favicon.png" />
+
+  <!-- Structured Data (JSON-LD) for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CheckMatch",
+    "url": "https://libraco.github.io/checkmatch/",
+    "description": "A secure, client-side tool to verify cryptocurrency wallet addresses before sending funds, preventing clipboard hijacking and address poisoning scams.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "CheckMatch Project"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ── NAV ── -->
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <div class="brand-icon">🔐</div>
+      <div class="brand-name">Check<span>Match</span></div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" id="btn-lang-en" data-lang="en">EN</button>
+      <button class="lang-btn active" id="btn-lang-vi" data-lang="vi">VI</button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="hero-badge">🛡️ <span data-i18n="heroBadge">Công cụ bảo mật miễn phí</span></div>
+    <h1>
+      <span data-i18n="heroH1a">Kiểm tra địa chỉ ví</span><br>
+      <span class="highlight" data-i18n="heroH1b">trước khi gửi crypto</span>
+    </h1>
+    <p data-i18n="heroPara">Lừa đảo đánh tráo địa chỉ ngày càng phổ biến. Hãy so sánh từng ký tự để đảm bảo bạn gửi đúng nơi.</p>
+    <div class="security-strip">
+      <div class="sec-badge"><div class="dot"></div><span data-i18n="badge1">100% Client-Side</span></div>
+      <div class="sec-badge"><div class="dot"></div><span data-i18n="badge2">Không lưu dữ liệu</span></div>
+      <div class="sec-badge"><div class="dot"></div><span data-i18n="badge3">Không tracking</span></div>
+      <div class="sec-badge"><div class="dot"></div><span data-i18n="badge4">Mã nguồn mở</span></div>
+    </div>
+  </header>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main>
+    <!-- ── HOW IT WORKS ── -->
+    <section class="card" aria-labelledby="how-title">
+      <div id="how-title" class="card-label" data-i18n="howTitle">⚡ Cách thực hiện</div>
+      <div class="how-grid">
+        <div class="how-item">
+          <div class="how-num" aria-hidden="true">1</div>
+          <div class="how-title" data-i18n="how1t">Dán địa chỉ gốc</div>
+          <div class="how-text" data-i18n="how1p">Copy địa chỉ từ nguồn chính thức (website, email xác nhận, QR code...).</div>
+        </div>
+        <div class="how-item">
+          <div class="how-num" aria-hidden="true">2</div>
+          <div class="how-title" data-i18n="how2t">Dán địa chỉ paste</div>
+          <div class="how-text" data-i18n="how2p">Paste địa chỉ bạn đã copy vào clipboard — cái sẽ dùng để gửi tiền.</div>
+        </div>
+        <div class="how-item">
+          <div class="how-num" aria-hidden="true">3</div>
+          <div class="how-title" data-i18n="how3t">Xem kết quả</div>
+          <div class="how-text" data-i18n="how3p">Hệ thống so sánh từng ký tự và cảnh báo ngay nếu phát hiện dấu hiệu lừa đảo.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INPUT ── -->
+    <section class="card" aria-labelledby="input-title">
+      <div id="input-title" class="card-label" data-i18n="cardInputTitle">🔍 So Sánh Địa Chỉ</div>
+      <div class="input-grid">
+        <div class="field-group">
+          <label class="field-label" for="addr-original" data-i18n="labelOriginal">📋 Địa chỉ gốc (nguồn chính thức)</label>
+          <textarea id="addr-original" class="addr-textarea"
+            placeholder="Dán địa chỉ bạn copy từ nguồn chính thức..."
+            spellcheck="false" autocomplete="off" autocorrect="off"></textarea>
+          <div class="chain-row"><span id="chain-original" class="chain-badge" aria-live="polite"></span></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="addr-pasted" data-i18n="labelPasted">📋 Địa chỉ đã paste (từ clipboard)</label>
+          <textarea id="addr-pasted" class="addr-textarea"
+            placeholder="Dán địa chỉ từ clipboard / ví của bạn..."
+            spellcheck="false" autocomplete="off" autocorrect="off"></textarea>
+          <div class="chain-row"><span id="chain-pasted" class="chain-badge" aria-live="polite"></span></div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button id="btn-check" class="btn btn-orange">
+          <span aria-hidden="true">🔍</span> <span data-i18n="btnCheck">Kiểm Tra Địa Chỉ</span>
+        </button>
+        <button id="btn-paste" class="btn btn-outline">
+          <span aria-hidden="true">📎</span> <span data-i18n="btnPasteClip">Paste từ Clipboard</span>
+        </button>
+        <button id="btn-clear" class="btn btn-ghost">
+          <span aria-hidden="true">🗑️</span> <span data-i18n="btnClear">Xóa</span>
+        </button>
+      </div>
+      <p style="font-size:0.73rem;color:var(--text-dim);margin-top:10px;" data-i18n="kbdHint">
+        💡 Nhấn <kbd class="kbd">Ctrl+Enter</kbd> để kiểm tra nhanh
+      </p>
+    </section>
+
+    <!-- ── RESULT ── -->
+    <section id="result-section" aria-live="polite" aria-labelledby="result-title">
+      <div class="card">
+        <div id="result-title" class="card-label" data-i18n="cardResultTitle">📊 Kết Quả Phân Tích</div>
+        <div id="risk-banner" class="risk-banner safe" role="alert">
+          <div id="risk-icon" class="risk-icon-wrap" aria-hidden="true">🛡️</div>
+          <div class="risk-copy">
+            <div id="risk-label" class="risk-head"></div>
+            <div id="risk-desc"  class="risk-sub"></div>
+          </div>
+          <div id="risk-score" class="risk-pct">100%</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-box"><div id="stat-match"      class="stat-val" style="color:var(--green)">0</div><div class="stat-lbl" data-i18n="statMatch">Khớp</div></div>
+          <div class="stat-box"><div id="stat-mismatch"   class="stat-val" style="color:var(--red)">0</div><div class="stat-lbl" data-i18n="statMismatch">Sai khác</div></div>
+          <div class="stat-box"><div id="stat-total"      class="stat-val">0</div><div class="stat-lbl" data-i18n="statTotal">Tổng ký tự</div></div>
+          <div class="stat-box"><div id="stat-similarity" class="stat-val">0%</div><div class="stat-lbl" data-i18n="statSimilarity">Độ giống</div></div>
+        </div>
+        <div class="diff-label" data-i18n="diffLabel1">Địa chỉ gốc — từng ký tự:</div>
+        <div id="diff-original" class="diff-box"></div>
+        <div class="diff-label" data-i18n="diffLabel2">Địa chỉ đã paste — từng ký tự:</div>
+        <div id="diff-pasted"   class="diff-box"></div>
+        <div class="legend">
+          <div class="legend-item"><div class="leg-dot match"></div><span data-i18n="legendMatch">Khớp</span></div>
+          <div class="legend-item"><div class="leg-dot mismatch"></div><span data-i18n="legendMismatch">Sai khác</span></div>
+          <div class="legend-item"><div class="leg-dot missing"></div><span data-i18n="legendMissing">Thiếu / Thừa</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECURITY ── -->
+    <section class="security-card" aria-labelledby="security-title">
+      <div id="security-title" class="card-label" style="color:#15803d;" data-i18n="secTitle">🔒 Cam Kết Bảo Mật</div>
+      <div class="security-features">
+        <div class="sec-feature"><div class="sec-feature-icon" aria-hidden="true">🖥️</div>
+          <div class="sec-feature-text"><strong data-i18n="secF1t">100% Trình duyệt</strong><span data-i18n="secF1p">Mọi tính toán diễn ra trong browser. Không có dữ liệu nào rời khỏi thiết bị.</span></div></div>
+        <div class="sec-feature"><div class="sec-feature-icon" aria-hidden="true">🚫</div>
+          <div class="sec-feature-text"><strong data-i18n="secF2t">Không lưu dữ liệu</strong><span data-i18n="secF2p">Không database, không server. Địa chỉ ví không bao giờ được lưu hay ghi lại.</span></div></div>
+        <div class="sec-feature"><div class="sec-feature-icon" aria-hidden="true">📡</div>
+          <div class="sec-feature-text"><strong data-i18n="secF3t">Không gọi API ngoài</strong><span data-i18n="secF3p">Website không kết nối internet khi kiểm tra. CSP header ngăn mọi request trái phép.</span></div></div>
+        <div class="sec-feature"><div class="sec-feature-icon" aria-hidden="true">👁️</div>
+          <div class="sec-feature-text"><strong data-i18n="secF4t">Mã nguồn mở</strong><span data-i18n="secF4p">Toàn bộ code có thể xem trên GitHub. Minh bạch hoàn toàn, không có gì ẩn.</span></div></div>
+      </div>
+    </section>
+
+    <!-- ── TIPS ── -->
+    <section class="card" aria-labelledby="tips-title">
+      <div id="tips-title" class="card-label" data-i18n="cardTipsTitle">🛡️ Mẹo Bảo Mật</div>
+      <div id="tips-container" class="tips-grid"></div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER + DONATION ── -->
+  <footer class="site-footer">
+    <p class="footer-main" id="footer-main-text">
+      Tạo bởi ❤️ để chống lừa đảo crypto &nbsp;|&nbsp;
+      Mã nguồn mở trên <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+    <div class="donation-row">
+      <span class="donation-label" data-i18n="donLabel">Donation BTC address wallet:</span>
+      <span class="btc-addr-text" id="btc-addr">bc1qqe52pz5f68zd8u2x9s35jjfr4jsfp3c5thddqd</span>
+      <button class="btn-copy-small" id="btn-copy-btc">
+        📋 <span data-i18n="copyBtn">Copy</span>
+      </button>
+    </div>
+    <p style="font-size:0.72rem;color:var(--text-dim);margin-top:6px;" data-i18n="donNote">⚠️ Chỉ gửi BTC — không gửi các loại coin khác đến địa chỉ này.</p>
+  </footer>
+
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
