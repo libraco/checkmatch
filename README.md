@@ -3,7 +3,7 @@
 > **Bảo vệ bạn khỏi lừa đảo clipboard hijacking & address poisoning.**  
 > Verify every crypto wallet address before sending funds to ensure complete security.
 
-🚀 **Live Demo**: [CheckMath on GitHub Pages](https://libraco.github.io/checkmath/)
+🚀 **Live Demo**: [CheckMatch on GitHub Pages](https://libraco.github.io/checkmatch/)
 
 ---
 
@@ -34,7 +34,7 @@
 CheckMatch is a static web app. You can host it anywhere for free.
 
 ### Deploy to GitHub Pages
-1. Fork or clone this repository: [CheckMath Source Code](https://github.com/libraco/checkmath)
+1. Fork or clone this repository: [CheckMatch Source Code](https://github.com/libraco/checkmatch)
 2. Go to **Settings → Pages**.
 3. Set Source to **Deploy from a branch** and select `main` branch, `/ (root)` folder.
 4. Your site will be live in minutes!
