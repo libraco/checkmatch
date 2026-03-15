@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,8 +59,8 @@
       <div class="brand-name">Check<span>Match</span></div>
     </div>
     <div class="lang-toggle">
-      <button class="lang-btn" id="btn-lang-en" data-lang="en">EN</button>
-      <button class="lang-btn active" id="btn-lang-vi" data-lang="vi">VI</button>
+      <button class="lang-btn active" id="btn-lang-en" data-lang="en">EN</button>
+      <button class="lang-btn" id="btn-lang-vi" data-lang="vi">VI</button>
     </div>
   </nav>
 
@@ -125,17 +125,17 @@
       </div>
       <div class="btn-row">
         <button id="btn-check" class="btn btn-orange">
-          <span aria-hidden="true">🔍</span> <span data-i18n="btnCheck">Kiểm Tra Địa Chỉ</span>
+          <span data-i18n="btnCheck">Kiểm Tra Địa Chỉ</span>
         </button>
         <button id="btn-paste" class="btn btn-outline">
-          <span aria-hidden="true">📎</span> <span data-i18n="btnPasteClip">Paste từ Clipboard</span>
+          <span data-i18n="btnPasteClip">Paste từ Clipboard</span>
         </button>
         <button id="btn-clear" class="btn btn-ghost">
-          <span aria-hidden="true">🗑️</span> <span data-i18n="btnClear">Xóa</span>
+          <span data-i18n="btnClear">Xóa</span>
         </button>
       </div>
-      <p style="font-size:0.73rem;color:var(--text-dim);margin-top:10px;" data-i18n="kbdHint">
-        💡 Nhấn <kbd class="kbd">Ctrl+Enter</kbd> để kiểm tra nhanh
+      <p style="font-size:0.73rem;color:var(--text-dim);margin-top:10px;" id="hint-text" data-i18n="kbdHint">
+        Nhấn Ctrl+Enter để kiểm tra nhanh
       </p>
     </section>
 

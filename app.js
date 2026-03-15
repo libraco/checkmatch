@@ -19,8 +19,8 @@ const i18n = {
     labelPasted: "📋 Pasted address (from clipboard)",
     placeholderOriginal: "Paste the address from the official source...",
     placeholderPasted: "Paste the address from your clipboard / wallet...",
-    btnCheck: "Check Addresses", btnPasteClip: "📎 Paste from Clipboard", btnClear: "🗑️ Clear",
-    kbdHint: "💡 Press Ctrl+Enter to check quickly",
+    btnCheck: "🔍 Check Addresses", btnPasteClip: "📎 Paste from Clipboard", btnClear: "🗑️ Clear",
+    kbdHint: "💡 Press <kbd class='kbd'>Ctrl+Enter</kbd> to check quickly",
     cardResultTitle: "📊 Analysis Result",
     statMatch: "Matching", statMismatch: "Different", statTotal: "Total Chars", statSimilarity: "Similarity",
     diffLabel1: "Original address — character by character:",
@@ -46,7 +46,7 @@ const i18n = {
       { icon: "🛡️", title: "Use address whitelists", text: "Most exchanges support whitelisting — activate it to prevent attacks." },
       { icon: "🔔", title: "Watch for lookalikes", text: "Scammers use 0 vs O, l vs 1, and similar visual tricks to fool you." },
     ],
-    footerMain: "Made with ❤️ to fight crypto scams &nbsp;|&nbsp; Open source on <a href='https://github.com' target='_blank' rel='noopener noreferrer'>GitHub</a>",
+    footerMain: "Made with ❤️ to fight crypto scams &nbsp;|&nbsp; Open source on <a href='https://github.com/libraco/checkmatch' target='_blank' rel='noopener noreferrer'>GitHub</a>",
     donLabel: "Donation BTC address wallet:",
     copyBtn: "Copy",
     donNote: "⚠️ Only send BTC to this address — do not send other coins.",
@@ -71,8 +71,8 @@ const i18n = {
     labelPasted: "📋 Địa chỉ đã paste (từ clipboard)",
     placeholderOriginal: "Dán địa chỉ bạn copy từ nguồn chính thức...",
     placeholderPasted: "Dán địa chỉ từ clipboard / ví của bạn...",
-    btnCheck: "Kiểm Tra Địa Chỉ", btnPasteClip: "📎 Paste từ Clipboard", btnClear: "🗑️ Xóa",
-    kbdHint: "💡 Nhấn Ctrl+Enter để kiểm tra nhanh",
+    btnCheck: "🔍 Kiểm Tra Địa Chỉ", btnPasteClip: "📎 Paste từ Clipboard", btnClear: "🗑️ Xóa",
+    kbdHint: "💡 Nhấn <kbd class='kbd'>Ctrl+Enter</kbd> để kiểm tra nhanh",
     cardResultTitle: "📊 Kết Quả Phân Tích",
     statMatch: "Khớp", statMismatch: "Sai khác", statTotal: "Tổng ký tự", statSimilarity: "Độ giống",
     diffLabel1: "Địa chỉ gốc — từng ký tự:",
@@ -98,7 +98,7 @@ const i18n = {
       { icon: "🛡️", title: "Dùng whitelist địa chỉ", text: "Hầu hết sàn giao dịch hỗ trợ whitelist địa chỉ. Hãy kích hoạt tính năng này." },
       { icon: "🔔", title: "Cảnh giác ký tự giả", text: "Kẻ lừa đảo dùng 0 vs O, l vs 1 để đánh lừa mắt người dùng." },
     ],
-    footerMain: "Tạo bởi ❤️ để chống lừa đảo crypto &nbsp;|&nbsp; Mã nguồn mở trên <a href='https://github.com' target='_blank' rel='noopener noreferrer'>GitHub</a>",
+    footerMain: "Tạo bởi ❤️ để chống lừa đảo crypto &nbsp;|&nbsp; Mã nguồn mở trên <a href='https://github.com/libraco/checkmatch' target='_blank' rel='noopener noreferrer'>GitHub</a>",
     donLabel: "Donation BTC address wallet:",
     copyBtn: "Copy",
     donNote: "⚠️ Chỉ gửi BTC đến địa chỉ này — không gửi các loại coin khác.",
@@ -111,7 +111,7 @@ const i18n = {
 };
 
 // ── STATE ──
-let currentLang = 'vi';
+let currentLang = 'en';
 
 // ── BLOCKCHAIN DETECT ──
 function detectBlockchain(address) {
@@ -272,7 +272,7 @@ function applyTranslations() {
     const key = el.getAttribute('data-i18n');
     if (t[key] === undefined) return;
     // Keys that contain HTML
-    if (key === 'footerMain') { el.innerHTML = t[key]; return; }
+    if (key === 'footerMain' || key === 'kbdHint') { el.innerHTML = t[key]; return; }
     el.textContent = t[key];
   });
 
